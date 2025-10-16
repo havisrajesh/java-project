@@ -1,0 +1,47 @@
+// File: Account.java
+// Author: Your Name
+// Description: Represents a bank account with balance and PIN authentication.
+
+public class Account {
+    private String accountNumber;
+    private int pin;
+    private double balance;
+
+    public Account(String accountNumber, int pin, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.pin = pin;
+        this.balance = initialBalance;
+    }
+
+    public boolean verifyPin(int enteredPin) {
+        return this.pin == enteredPin;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Successfully deposited ₹" + amount);
+        } else {
+            System.out.println("Invalid deposit amount!");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Invalid withdrawal amount!");
+        } else if (amount > balance) {
+            System.out.println("Insufficient balance!");
+        } else {
+            balance -= amount;
+            System.out.println("Successfully withdrew ₹" + amount);
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+}
