@@ -46,4 +46,9 @@ public class StudentGradeCalculator {
 
         // Display results
         System.out.println("\n===== RESULT =====");
-        System.out.println("Total Marks: "
+        System.out.println("Total Marks: ");
+        System.out.printf("Average: %.2f%n", average);
+        System.out.println("Grade: " + grade);
+        sc.close();
+    }
+}
